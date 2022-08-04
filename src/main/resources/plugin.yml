@@ -1,0 +1,12 @@
+name: GenCore
+version: '${version}'
+main: me.zort.gencore.GenCore
+author: ZorTik
+depend: [Vault]
+commands:
+  gencoreadmin:
+    usage: /gencoreadmin
+  togglegens:
+    usage: /togglegens
+  storage:
+    usage: /storage

@@ -1,0 +1,82 @@
+max-entity-stack-amount: 10
+task-chain:
+  interval: 1
+data-source:
+  # Types: SQLite
+  type: SQLite
+  url: "/database.db"
+virtual-storage:
+  title: "Virtual Storage"
+  rows: 6
+  previous-page-item:
+    type: ARROW
+    amount: 1
+    data: 0
+    meta:
+      display-name: "&e<- &6Previous page"
+  next-page-item:
+    type: ARROW
+    amount: 1
+    data: 0
+    meta:
+      display-name: "&6Next Page &e->"
+spawn-item:
+  type: DIAMOND_BLOCK
+  amount: 1
+  data: 0
+  meta:
+    display-name: "&6Spawner"
+    lore:
+      - "&f&oHey! Let's spawn"
+mobs:
+  ZOMBIE:
+    loot-amount: 3
+    loot:
+      iron-sword:
+        type: IRON_SWORD
+        amount: 1
+        data: 0
+        meta:
+          display-name: "&cHead Crusher!"
+          lore:
+            - "&f&oHmmmm... Brains!"
+            - ""
+            - "&6Modifier: &f%modifier%x"
+            - "&aClick to sell!"
+        sell-price: 50.0
+        chance: 20.0
+  CREEPER:
+    loot-amount: 5
+    loot:
+      iron-sword:
+        type: IRON_SWORD
+        amount: 1
+        data: 0
+        meta:
+          display-name: "&cHead Crusher!"
+          lore:
+            - "&f&oHmmmm... Brains!"
+            - ""
+            - "&6Modifier: &f%modifier%x"
+            - "&aClick to sell!"
+        sell-price: 50.0
+        chance: 50.0
+      diamond:
+        type: DIAMOND
+        amount: 1
+        data: 0
+        meta:
+          display-name: "&bDiamanti!"
+          lore:
+            - "&f&oHmmmm... Diamanti!"
+            - ""
+            - "&6Modifier: &f%modifier%x"
+            - "&aClick to sell!"
+        sell-price: 500.0
+        chance: 50.0
+tiers:
+  tier1:
+    mob: ZOMBIE
+  tier2:
+    upgrade-cost: 1000.0
+    mob: CREEPER
