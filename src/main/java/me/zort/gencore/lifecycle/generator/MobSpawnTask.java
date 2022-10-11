@@ -64,17 +64,12 @@ public class MobSpawnTask extends ScheduledTask {
                             Location loc = bukkitLocation.clone().add(0.0, 1.0, 0.0);
                             Chunk c = loc.getChunk();
                             List<SpawnedEntity> entities = entityCache.getEntities(c, entityType);
-                            System.out.println("Entities: " + entities.size());
                             Optional<SpawnedEntity> entityHolderOptional = entities.stream()
                                     .filter(e -> {
                                         boolean b = e.getAmount() < config.getInt("max-entity-stack-amount").orElse(10);
-                                        System.out.println("Amount: " + e.getAmount());
-                                        System.out.println("Max stack: " + config.getInt("max-entity-stack-amount").orElse(10));
-                                        System.out.println(b);
                                         return b;
                                     })
                                     .min(Comparator.comparingInt(SpawnedEntity::getAmount));
-                            System.out.println("Entity holder: " + entityHolderOptional.isPresent());
                             if(entityHolderOptional.isPresent()) {
                                 SpawnedEntity entityHolder = entityHolderOptional.get();
                                 entityCache.modifyEntityAsync(entityHolder.getId(), entityHolder.getOwner(), se -> {
