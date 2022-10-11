@@ -284,8 +284,8 @@ public class GenCoreListener implements Listener {
                 return false;
             }
         } else {
-            System.out.println("was null");
-            /*Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+            /* 
+            Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
                 Dao<SpawnedEntity, String> dao = connector.getOrCreateDao(SpawnedEntity.class);
                 if(dao == null) {
                     plugin.getLogger().info("Cannot create dao for entities!");
@@ -300,7 +300,8 @@ public class GenCoreListener implements Listener {
                 } catch (SQLException ex) {
                     ex.printStackTrace();
                 }
-            });*/
+            }); 
+            */
             return true;
         }
     }
